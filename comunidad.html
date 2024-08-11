@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecopledge - Comunidad</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Ecopledge</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="recicla.html">¡Recicla!</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comunidad.html">Comunidad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register.html">Registrarse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="community py-5">
+        <div class="container">
+            <h2>Comunidad y Puntos de Reciclaje</h2>
+            <p class="lead">
+                En Ecopledge, creemos en la importancia de la comunidad para fomentar prácticas de reciclaje. Aquí encontrarás información sobre temas sociales relacionados con el reciclaje y un mapa interactivo para encontrar los puntos de reciclaje más cercanos a ti.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Temas Sociales del Reciclaje</h3>
+                    <ul>
+                        <li><strong>Educación Ambiental:</strong> La educación es clave para fomentar una cultura de reciclaje.</li>
+                        <li><strong>Impacto Social:</strong> El reciclaje puede generar empleo y mejorar la calidad de vida en las comunidades.</li>
+                        <li><strong>Reducción de Residuos:</strong> La colaboración comunitaria es esencial para reducir la cantidad de residuos que llegan a los vertederos.</li>
+                        <li><strong>Innovación y Tecnología:</strong> Las nuevas tecnologías facilitan el reciclaje y la gestión de residuos.</li>
+                    </ul>
+                    
+                    <h3>Historias de Éxito y Testimonios</h3>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">María Pérez</h5>
+                            <p class="card-text">"Gracias a Ecopledge, he podido motivar a mi comunidad a reciclar más. Es gratificante ver cómo pequeños cambios pueden tener un gran impacto."</p>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Juan Martínez</h5>
+                            <p class="card-text">"El mapa interactivo de Ecopledge me ha facilitado encontrar puntos de reciclaje cercanos, haciendo que mi rutina de reciclaje sea más eficiente."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <div>
+                <h2>Agrega un punto de Reciclaje</h2>
+                <form id="recycling-point-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" name="address" required><br><br>
+                    <label for="materials_accepted">Materiales Aceptados:</label>
+                    <input type="text" id="materials_accepted" name="materials_accepted" required><br><br>
+                    <button type="submit">Agregar</button>
+                </form>
+            </div>
+            <div>
+                <h2>Puntos de Reciclaje</h2>
+                <ul id="recycling-points-list"></ul>
+            </div>
+            <div>
+                <h2>Eventos Comunitarios</h2>
+                <ul id="events-list"></ul>
+                <h3>Agregar un Evento</h3>
+                <form id="event-form">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="description">Descripción:</label>
+                    <textarea id="description" name="description" required></textarea><br><br>
+                    <label for="date">Fecha:</label>
+                    <input type="datetime-local" id="date" name="date" required><br><br>
+                    <label for="location">Ubicación:</label>
+                    <input type="text" id="location" name="location" required><br><br>
+                    <button type="submit">Agregar Evento</button>
+                </form>
+            </div>                       
+        </div>
+    </section>
+    <section class="contact py-5 text-center bg-light">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>
+                Si tienes alguna pregunta o necesitas más información sobre nosotros, no dudes en contactarnos al +6013333333 o envíanos un correo electrónico a info@ecopledge.com.
+            </p>
+            <a href="login.html" class="btn btn-success btn-lg">Iniciar Sesión</a>
+        </div>
+    </section>
+    <footer class="footer bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>2024 Ecopledge. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="comunidad.js"></script>
+    <script>
+        // Inicialización del mapa
+        var map = L.map('map').setView([4.6097100, -74.0817500], 12); // Coordenadas de ejemplo para Bogotá, Colombia
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        document.addEventListener('DOMContentLoaded', loadRecyclingPoints);
+    </script>
+</body>
+</html>

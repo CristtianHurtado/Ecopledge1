@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Ecopledge</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body style="background: url('assets/img/fondo_index.jpg') no-repeat center center fixed; background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ecopledge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recicla.html">Recicla</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comunidad.html">Comunidad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nombreUsuario"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">¡Hola, {{ user_name }}!</h1>
+            <p class="lead">Este es tu perfil. Aquí puedes ver tus aportes y actualizaciones.</p>
+        </div>
+
+        <div class="mt-4">
+            <h3>Tus contribuciones:</h3>
+            <ul id="userContributions" class="list-group">
+                <!-- Aquí se agregarán las contribuciones del usuario -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Supongamos que los datos del usuario se obtienen desde el backend
+            const usuario = {
+                nombre: "Nombre del Usuario", // Este es un ejemplo, reemplazar con datos reales del backend
+                contribuciones: [
+                    "Punto de reciclaje agregado en Calle X",
+                    "Sugerencia de mejora en la página de Comunidad",
+                    "Comentario en la sección de Reciclaje"
+                ]
+            };
+
+            // Mostrar el nombre del usuario en la página
+            document.getElementById("usuarioNombre").innerText = usuario.nombre;
+            document.getElementById("nombreUsuario").innerText = usuario.nombre;
+
+            // Mostrar las contribuciones del usuario
+            const contributionsList = document.getElementById("userContributions");
+            usuario.contribuciones.forEach(function(contribucion) {
+                const listItem = document.createElement("li");
+                listItem.className = "list-group-item";
+                listItem.innerText = contribucion;
+                contributionsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

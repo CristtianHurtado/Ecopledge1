@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Ecopledge</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Ecopledge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Regístrarse</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="contenedor__todo row">
+            <div class="caja__trasera col-md-6 d-none d-md-block">
+                <div class="caja__trasera-login text-center">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar a Ecopledge</p>
+                    <a href="login.html" class="btn btn-outline-light mt-3">Iniciar Sesión</a>
+                </div>
+                <div class="caja__trasera-register text-center mt-5">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <a href="register.html" class="btn btn-outline-light mt-3">Regístrarse</a>
+                </div>
+            </div>
+            <div class="contenedor__login-register col-md-6">
+                <form id="loginForm" method="POST" action="/api/auth/login" class="formulario__login text-center p-4 border rounded">
+                    <h2 class="mb-4">Iniciar Sesión</h2>
+                    <div class="form-group">
+                        <input type="text" id="username" class="form-control" placeholder="Nombre de Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                    <button type="button" class="btn btn-success btn-block" onclick="login()">Entrar</button>
+                    <p id="responseMessage"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        async function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+            const responseMessage = document.getElementById('responseMessage');
+
+            if (response.ok) {
+                responseMessage.innerText = data.message;
+                responseMessage.style.color = 'green';
+                window.location.href = '/recicla.html'; // Redirigir a la página de reciclaje
+            } else {
+                responseMessage.innerText = data.message;
+                responseMessage.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url('images/ecology-background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 60px 0;
+  background-image: url('images/ecology-background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: #fff; 
+  padding: 100px 0; 
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #28a745;
+  text-decoration: none;
+}
+
+.header-content {
+  text-align: center;
+  padding: 100px 0;
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 50px;
+  border-radius: 10px;  
+}
+
+.header-txt h1 {
+  font-size: 48px;
+  margin: 0 0 20px 0;
+}
+
+.header-txt p {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+.about {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-txt span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-txt h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.about-txt hr {
+  width: 50px;
+  height: 5px;
+  background-color: #28a745;
+  border: none;
+}
+
+.about-txt p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.about-img img {
+  width: 60%; 
+  border-radius: 10px;
+}
+
+.sociales {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.sociales-content {
+  display: flex;
+  gap: 20px;
+}
+
+.social-item {
+  flex: 1;
+  text-align: center;
+}
+
+.social-item img {
+  width: 60%; 
+  border-radius: 10px;
+}
+
+.social-item h4 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.social-item p {
+  font-size: 16px;
+}
+
+.information {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+.information-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.information-txt span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.information-txt h2 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.information-txt hr {
+  width: 50px;
+  height: 5px;
+  background-color: #28a745;
+  border: none;
+}
+
+.information-txt p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.information-img img {
+  width: 60%;
+  border-radius: 10px;
+}
+
+.contact {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 50px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.text-success {
+  color: #28a745 !important;
+}
+
+footer {
+  background: #343a40; 
+}
+
+
